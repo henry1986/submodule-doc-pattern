@@ -15,8 +15,8 @@ Um Ordnung im Projekt zu halten, wird der `/docs`-Ordner wie folgt strukturiert:
    * Enthält die interne Dokumentation für Entwickler, die direkt an dieser Anwendung arbeiten (Design-Entscheidungen, Architektur, Setup). Sie wird direkt im Git-Repository versioniert.
 2. **`docs/lib-docs/` (Für externe Bibliotheken):**
    * **Reservierter Pfad** für das Submodule-Pattern. Hier werden die Dokumentations-Repositorys von externen Bibliotheken (z. B. `docs/lib-docs/my-library`) als Read-Only Submodule eingebunden und auf die verwendete Version fixiert.
-3. **`docs/releases/` (Für eigene Bibliotheks-Releases):**
-   * Wenn dieses Projekt selbst eine Bibliothek wäre, würde hier das eigene Doku-Repository mit Schreibrechten als Submodul eingebunden werden, um synchrone Dokumentations-Releases zu erstellen.
+3. **`docs/releases/` (Optional - Nur für eigene Bibliotheks-Releases):**
+   * Wird nur benötigt, wenn dieses Projekt selbst eine Bibliothek/Library ist, die von anderen konsumiert wird. In diesem Fall wird hier das eigene Doku-Repository mit Schreibrechten als Submodul eingebunden, um synchrone Dokumentations-Releases zu erstellen. Für reine Endanwender-Apps (Endconsumer Apps) ist dieser Ordner nicht notwendig und entfällt.
 
 ---
 

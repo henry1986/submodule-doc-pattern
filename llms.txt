@@ -9,7 +9,7 @@ Decouple documentation and source code into separate repositories:
 Projects following this pattern structure their `/docs` directory to separate internal documentation from external referenced docs:
 - `docs/internal/` (or other subdirectories like `docs/design/`, `docs/architecture/`): Stores internal project documentation directly in the main repository.
 - `docs/lib-docs/` (Reserved): Contains read-only submodules for external dependency documentation (e.g. `docs/lib-docs/dependency-name`).
-- `docs/releases/`: Used by library repositories to include their own writable documentation submodule.
+- `docs/releases/` (Optional): Only used by library repositories to include their own writable documentation submodule (not needed for end-consumer applications).
 
 ## Workflow
 
