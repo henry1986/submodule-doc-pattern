@@ -772,7 +772,7 @@
                 <div class="card" style="margin-bottom: 2rem;">
                     <h3 style="margin-bottom: 1rem; color: var(--primary);">核心的な仕組みの詳細</h3>
                     <p style="margin-bottom: 1rem; color: var(--text-muted);"><code>my-library</code> のようなライブラリを作成する場合、パッケージマネージャーに公開します（例：Maven/Gradleでローカルの <code>mavenLocal()</code> にインポート）。並行して、ドキュメント用のリポジトリ（例：<code>my-library-docs</code>）を作成します。</p>
-                    <p style="margin-bottom: 1.5rem; color: var(--text-muted);">ライブラリプロジェクトでは、このドキュメントリポジトリは <code>docs/releases</code> に書き込み権限付きで統合されます。ライブラリを使用するコンシューマープロジェクトでは、同じドキュメントリポジトリが <strong>読み取り専用のサブモジュール</strong> として <code>docs/lib-docs/my-library</code> に統合され、対応するリリースバージョンタグに固定されます。</p>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-muted);">ライブラリプロジェクトでは、このドキュメントリポジトリは <code>docs/releases</code> に書き込み権限付きで統合されます。ライブラリを使用するコンシューマープロジェクトでは、同じドキュメントリポジトリが <strong>読み取り専用のサブモジュール</strong> として <code>docs/lib-docs/my-library</code> に統合され、対応するリリースバージョンタグに固定されます。 外部依存関係用の <code>docs/lib-docs/</code> に加えて、プロジェクトフォルダ <code>docs/</code> には、内部プロジェクトドキュメント用の他のディレクトリ（<code>docs/design/</code> や <code>docs/internal/</code> など）も当然含めることができます。</p>
                     <div style="background: rgba(29, 41, 66, 0.4); border: 1px solid var(--border); padding: 1.5rem; border-radius: 12px;">
                         <h4 style="margin-bottom: 0.5rem; color: #fff; font-size: 0.95rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">エージェントへのメリット：</h4>
                         <p style="font-size: 0.9rem; color: var(--text-muted);">コンシューマープロジェクトの編集を依頼されたAIエージェントは、標準化された <code>docs/lib-docs/</code> フォルダを検出し、使用されているバージョンのMarkdownマニュアルを直接読み込み、推測に頼らずに正しいAPI呼び出しコードを生成します。</p>

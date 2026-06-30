@@ -772,7 +772,7 @@
                 <div class="card" style="margin-bottom: 2rem;">
                     <h3 style="margin-bottom: 1rem; color: var(--primary);">核心原理详解</h3>
                     <p style="margin-bottom: 1rem; color: var(--text-muted);">当你创建一个像 <code>my-library</code> 这样的库时，你将其发布到包管理器中（例如，通过本地 Maven/Gradle 导入 <code>mavenLocal()</code>）。同时，你创建一个文档库（例如 <code>my-library-docs</code>）。</p>
-                    <p style="margin-bottom: 1.5rem; color: var(--text-muted);">在库项目中，此文档库以写权限挂载在 <code>docs/releases</code> 下。在消费该库的项目中，同一个文档库以<strong>只读子模块</strong>形式挂载在 <code>docs/lib-docs/my-library</code> 下，并固定到相应的发布版本标签。</p>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-muted);">在库项目中，此文档库以写权限挂载在 <code>docs/releases</code> 下。在消费该库的项目中，同一个文档库以<strong>只读子模块</strong>形式挂载在 <code>docs/lib-docs/my-library</code> 下，并固定到相应的发布版本标签。 除了用于外部依赖的 <code>docs/lib-docs/</code> 外，项目文件夹 <code>docs/</code> 自然也可以包含其他目录（例如 <code>docs/design/</code> 或 <code>docs/internal/</code>）用于内部项目文档。</p>
                     <div style="background: rgba(29, 41, 66, 0.4); border: 1px solid var(--border); padding: 1.5rem; border-radius: 12px;">
                         <h4 style="margin-bottom: 0.5rem; color: #fff; font-size: 0.95rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">智能体优势：</h4>
                         <p style="font-size: 0.9rem; color: var(--text-muted);">负责修改消费项目的 AI 智能体能识别标准化的 <code>docs/lib-docs/</code> 目录，直接读取所用版本的 Markdown 手册，从而编写出正确的接口调用代码，无需猜测。</p>
