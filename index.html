@@ -638,18 +638,18 @@ Decouple documentation and source code into separate repositories:
 3. Document features and tag documentation releases synchronously with library releases.
 
 ### Phase B: Consumption in Consumer Repository (Read access)
-1. Add the docs repository as a read-only submodule under `docs/sdk-docs/my-library`:
-   `git submodule add git@github.com:my-organization/my-library-docs.git docs/sdk-docs/my-library`
+1. Add the docs repository as a read-only submodule under `docs/lib-docs/my-library`:
+   `git submodule add git@github.com:my-organization/my-library-docs.git docs/lib-docs/my-library`
 2. Fetch tags and pin to the exact version used in the project:
    ```bash
-   cd docs/sdk-docs/my-library
+   cd docs/lib-docs/my-library
    git fetch --tags
    git checkout tags/v1.0.0
    ```
 3. Commit the pinned submodule to the consumer repository.
 
 ## Benefits for AI Agents
-Autonomously operating agents in the consumer workspace can scan `docs/sdk-docs/` to immediately find version-accurate documentation without crawling code or external search engines.
+Autonomously operating agents in the consumer workspace can scan `docs/lib-docs/` to immediately find version-accurate documentation without crawling code or external search engines.
     </script>
 
     <div class="container">
@@ -693,7 +693,7 @@ Autonomously operating agents in the consumer workspace can scan `docs/sdk-docs/
                             <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                         </div>
                         <h3>AI Agent Ready</h3>
-                        <p>AI-Agenten haben im Workspace durch den standardisierten Pfad <code>docs/sdk-docs/</code> sofortigen Zugriff auf API-Handbücher, ohne erst das Web oder Quellcode parsen zu müssen.</p>
+                        <p>AI-Agenten haben im Workspace durch den standardisierten Pfad <code>docs/lib-docs/</code> sofortigen Zugriff auf API-Handbücher, ohne erst das Web oder Quellcode parsen zu müssen.</p>
                     </div>
                 </div>
 
@@ -704,12 +704,12 @@ Autonomously operating agents in the consumer workspace can scan `docs/sdk-docs/
                     </p>
                     <p style="margin-bottom: 1.5rem; color: var(--text-muted);">
                         Im Bibliotheksprojekt ist dieses Docs-Repository unter <code>docs/releases</code> eingebunden (mit Schreibrechten).
-                        Im Consumer-Projekt, welches die Bibliothek konsumiert, wird dasselbe Docs-Repository als <strong>read-only Submodule</strong> unter <code>docs/sdk-docs/my-library</code> eingebunden und auf den entsprechenden Release-Tag fixiert.
+                        Im Consumer-Projekt, welches die Bibliothek konsumiert, wird dasselbe Docs-Repository als <strong>read-only Submodule</strong> unter <code>docs/lib-docs/my-library</code> eingebunden und auf den entsprechenden Release-Tag fixiert.
                     </p>
                     <div style="background: rgba(29, 41, 66, 0.4); border: 1px solid var(--border); padding: 1.5rem; border-radius: 12px;">
                         <h4 style="margin-bottom: 0.5rem; color: #fff; font-size: 0.95rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">Vorteil für Agenten:</h4>
                         <p style="font-size: 0.9rem; color: var(--text-muted);">
-                            Ein AI-Agent, der den Auftrag hat, ein Consumer-Projekt anzupassen, sieht den standardisierten Ordner <code>docs/sdk-docs/</code> und liest direkt die Markdown-Handbücher für die genutzte Version. Er baut dadurch korrekte Schnittstellen-Aufrufe ohne ausprobieren zu müssen.
+                            Ein AI-Agent, der den Auftrag hat, ein Consumer-Projekt anzupassen, sieht den standardisierten Ordner <code>docs/lib-docs/</code> und liest direkt die Markdown-Handbücher für die genutzte Version. Er baut dadurch korrekte Schnittstellen-Aufrufe ohne ausprobieren zu müssen.
                         </p>
                     </div>
                 </div>
@@ -749,7 +749,7 @@ Autonomously operating agents in the consumer workspace can scan `docs/sdk-docs/
                                 <div class="sim-step-num">4</div>
                                 <div class="sim-step-info">
                                     <h4>Einbindung im Consumer-Projekt</h4>
-                                    <p>Als Read-Only Submodule unter docs/sdk-docs/.</p>
+                                    <p>Als Read-Only Submodule unter docs/lib-docs/.</p>
                                 </div>
                             </button>
                             <button class="sim-step-btn" onclick="activateStep(5)">
@@ -846,16 +846,16 @@ git submodule add git@github.com:my-organization/my-library-docs.git docs/releas
                                     <button class="copy-btn" onclick="copyCode('code-setup-consumer')">Kopieren</button>
                                 </div>
                                 <pre><code id="code-setup-consumer"># 1. Doku-Submodul lesend hinzufügen
-git submodule add git@github.com:my-organization/my-library-docs.git docs/sdk-docs/my-library
+git submodule add git@github.com:my-organization/my-library-docs.git docs/lib-docs/my-library
 
 # 2. Version taggen und festpinnen
-cd docs/sdk-docs/my-library
+cd docs/lib-docs/my-library
 git fetch --tags
 git checkout tags/v1.0.0
 cd ../../
 
 # 3. Änderungen in Git erfassen
-git add docs/sdk-docs/my-library
+git add docs/lib-docs/my-library
 git commit -m "chore: pin my-library docs to v1.0.0"</code></pre>
                             </div>
                         </div>
@@ -910,7 +910,7 @@ git commit -m "chore: pin my-library docs to v1.0.0"</code></pre>
             },
             4: {
                 title: "4. Einbindung im Consumer-Projekt (Lesezugriff)",
-                text: "Im Consumer-Projekt (z. B. <code>ConsumerApp</code>) wird das Doku-Repository als Read-Only Submodule unter <code>docs/sdk-docs/my-library</code> eingebunden.",
+                text: "Im Consumer-Projekt (z. B. <code>ConsumerApp</code>) wird das Doku-Repository als Read-Only Submodule unter <code>docs/lib-docs/my-library</code> eingebunden.",
                 nodes: { lib: false, docs: true, consumer: true },
                 nodeClasses: { docs: "active-node", consumer: "active-node-secondary" },
                 arrows: { 1: false, 2: true },
@@ -926,7 +926,7 @@ git commit -m "chore: pin my-library docs to v1.0.0"</code></pre>
             },
             6: {
                 title: "6. Autonomer Agent liest Doku",
-                text: "Wenn ein AI-Agent im Consumer-Workspace arbeitet, scannt er <code>docs/sdk-docs/</code>. Er liest die exakt versionierte API-Dokumentation und kann korrekten Integrationscode schreiben.",
+                text: "Wenn ein AI-Agent im Consumer-Workspace arbeitet, scannt er <code>docs/lib-docs/</code>. Er liest die exakt versionierte API-Dokumentation und kann korrekten Integrationscode schreiben.",
                 nodes: { lib: false, docs: true, consumer: true },
                 nodeClasses: { docs: "active-node-success", consumer: "active-node-success" },
                 arrows: { 1: false, 2: true },
@@ -986,16 +986,16 @@ gh repo create ${gitOrg}/${libRepoName} --public --clone
 git submodule add git@github.com:${gitOrg}/${libRepoName}.git docs/releases`;
 
             const setupConsumerCode = `# 1. Doku-Submodul lesend hinzufügen
-git submodule add git@github.com:${gitOrg}/${libRepoName}.git docs/sdk-docs/${libName}
+git submodule add git@github.com:${gitOrg}/${libRepoName}.git docs/lib-docs/${libName}
 
 # 2. Version taggen und festpinnen
-cd docs/sdk-docs/${libName}
+cd docs/lib-docs/${libName}
 git fetch --tags
 git checkout tags/${versionTag}
 cd ../../
 
 # 3. Änderungen in Git erfassen
-git add docs/sdk-docs/${libName}
+git add docs/lib-docs/${libName}
 git commit -m "chore: pin ${libName} docs to ${versionTag}"`;
 
             document.getElementById('code-setup-lib').textContent = setupLibCode;

@@ -14,15 +14,15 @@ Decouple documentation and source code into separate repositories:
 3. Document features and tag documentation releases synchronously with library releases.
 
 ### Phase B: Consumption in Consumer Repository (Read access)
-1. Add the docs repository as a read-only submodule under `docs/sdk-docs/my-library`:
-   `git submodule add git@github.com:my-organization/my-library-docs.git docs/sdk-docs/my-library`
+1. Add the docs repository as a read-only submodule under `docs/lib-docs/my-library`:
+   `git submodule add git@github.com:my-organization/my-library-docs.git docs/lib-docs/my-library`
 2. Fetch tags and pin to the exact version used in the project:
    ```bash
-   cd docs/sdk-docs/my-library
+   cd docs/lib-docs/my-library
    git fetch --tags
    git checkout tags/v1.0.0
    ```
 3. Commit the pinned submodule to the consumer repository.
 
 ## Benefits for AI Agents
-Autonomously operating agents in the consumer workspace can scan `docs/sdk-docs/` to immediately find version-accurate documentation without crawling code or external search engines.
+Autonomously operating agents in the consumer workspace can scan `docs/lib-docs/` to immediately find version-accurate documentation without crawling code or external search engines.
