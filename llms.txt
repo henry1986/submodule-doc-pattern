@@ -1,15 +1,13 @@
 # Git Submodule Documentation Pattern (LLM Guide)
 
 ## Concept
-Decouple documentation and source code into separate repositories:
-1. **Library Repository** (`my-library`): Contains the code source.
-2. **Docs Repository** (`my-library-docs`): Contains markdown manuals, guides, and api-specs.
+Isolate external dependency documentation and release-related documentation into reserved namespaces (using Git submodules), while allowing native, version-coupled project documentation to live directly in the `/docs` directory. This keeps the workspace clean and avoids path collisions.
 
 ## Directory Structure of `/docs`
-Projects following this pattern structure their `/docs` directory to separate internal documentation from external referenced docs:
-- `docs/internal/` (or other subdirectories like `docs/design/`, `docs/architecture/`): Stores internal project documentation directly in the main repository.
+Projects following this pattern structure their `/docs` directory as follows:
+- `docs/` (Root / Arbitrary Subdirectories): Stores native, version-coupled project documentation (e.g., architecture, guides, API specs) directly in the main repository.
 - `docs/lib-docs/` (Reserved): Contains read-only submodules for external dependency documentation (e.g. `docs/lib-docs/dependency-name`).
-- `docs/releases/` (Optional): Only used by library repositories to include their own writable documentation submodule (not needed for end-consumer applications).
+- `docs/releases/` (Reserved / Optional): Contains the project's own writable documentation/release repository as a submodule (not needed for end-consumer applications).
 
 ## Workflow
 
