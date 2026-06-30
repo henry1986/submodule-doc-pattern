@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Git Submodule Dokumentations-Pattern für AI-Agenten</title>
+    <title>Wzorzec dokumentacji za pomocą podmodułów Git dla agentów AI</title>
     <!-- Metadata for LLMs and Search Crawlers -->
-    <meta name="description" content="Git Submodule Dokumentations-Pattern für Entwickler und AI-Agenten. Enthält ein eingebettetes Markdown für LLMs und Scraper.">
+    <meta name="description" content="Wzorzec dokumentacji podmodułów Git dla programistów i agentów AI. Zawiera wbudowany markdown dla LLM i scraperów.">
     <link rel="alternate" type="text/markdown" title="LLM-friendly documentation" href="llms.txt">
     <link rel="alternate" hreflang="de" href="index.html" />
     <link rel="alternate" hreflang="en" href="index_en.html" />
@@ -674,7 +674,7 @@
     </style>
     <script>
         // Set page language
-        const CURRENT_LANG = "de";
+        const CURRENT_LANG = "pl";
         const SUPPORTED_LANGS = ["de", "en", "es", "fr", "zh", "ja", "pt", "pl"];
 
         function redirectToLang(lang) {
@@ -728,17 +728,17 @@
         </div>
 
         <header>
-            <span class="badge">Dokumentations-Architektur</span>
+            <span class="badge">Architektura Dokumentacji</span>
             <h1>Git Submodule Docs Pattern</h1>
-            <p class="subtitle">Ein standardisiertes Pattern zur Entkopplung und Versionierung von Bibliotheksdokumentationen über Git-Submodule, optimiert für menschliche Entwickler und autonome AI-Agenten.</p>
+            <p class="subtitle">Standaryzowany wzorzec do rozdzielania i wersjonowania dokumentacji bibliotek za pomocą podmodułów Git, zoptymalizowany pod kątem programistów i autonomicznych agentów AI.</p>
         </header>
 
         <!-- Navigation Tabs -->
         <div class="tabs-container">
             <div class="tabs-nav">
-                <button class="tab-btn active" onclick="switchTab(event, 'overview-tab')">Konzept & Nutzen</button>
-                <button class="tab-btn" onclick="switchTab(event, 'interactive-tab')">Ablauf-Simulator</button>
-                <button class="tab-btn" onclick="switchTab(event, 'generator-tab')">Befehls-Generator</button>
+                <button class="tab-btn active" onclick="switchTab(event, 'overview-tab')">Koncepcja i korzyści</button>
+                <button class="tab-btn" onclick="switchTab(event, 'interactive-tab')">Symulator przepływu</button>
+                <button class="tab-btn" onclick="switchTab(event, 'generator-tab')">Generator komend</button>
             </div>
 
             <!-- Tab 1: Overview -->
@@ -748,34 +748,34 @@
                         <div class="card-icon">
                             <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
                         </div>
-                        <h3>Entkopplung der Doku</h3>
-                        <p>Dokumentation und Code liegen in separaten Repositories. Das spart Speicherplatz und Bandbreite beim Clonen für Konsumenten, die nur die Spezifikationen lesen möchten.</p>
+                        <h3>Rozdzielenie dokumentacji</h3>
+                        <p>Dokumentacja i kod źródłowy znajdują się w osobnych repozytoriach. Oszczędza to miejsce na dysku i przepustowość podczas klonowania dla odbiorców, którzy chcą tylko czytać specyfikacje.</p>
                     </div>
 
                     <div class="card">
                         <div class="card-icon">
                             <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 7h10M7 12h10m-8 5h8M3 5h18v14H3V5z"></path></svg>
                         </div>
-                        <h3>Version-Matching</h3>
-                        <p>Das Submodul wird auf einen spezifischen Git-Tag (z. B. <code>v1.0.0</code>) ausgecheckt. Die Dokumentation stimmt somit immer 100% mit der verwendeten Code-Version überein.</p>
+                        <h3>Dopasowanie wersji</h3>
+                        <p>Podmoduł jest przełączany na określony znacznik Git (np. <code>v1.0.0</code>). Dokumentacja jest więc zawsze w 100% zgodna z używaną wersją kodu.</p>
                     </div>
 
                     <div class="card">
                         <div class="card-icon">
                             <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                         </div>
-                        <h3>AI Agent Ready</h3>
-                        <p>AI-Agenten haben im Workspace durch den standardisierten Pfad <code>docs/lib-docs/</code> sofortigen Zugriff auf API-Handbücher, ohne erst das Web oder Quellcode parsen zu müssen.</p>
+                        <h3>Gotowość dla agentów AI</h3>
+                        <p>Agenci AI w przestrzeni roboczej uzyskują natychmiastowy dostęp do instrukcji API za pośrednictwem standaryzowanej ścieżki <code>docs/lib-docs/</code>, bez konieczności przeszukiwania sieci czy kodu źródłowego.</p>
                     </div>
                 </div>
 
                 <div class="card" style="margin-bottom: 2rem;">
-                    <h3 style="margin-bottom: 1rem; color: var(--primary);">Das Kernprinzip im Detail</h3>
-                    <p style="margin-bottom: 1rem; color: var(--text-muted);">Wenn du eine Bibliothek wie <code>my-library</code> erstellst, veröffentlichst du sie in deiner Paketverwaltung (z. B. über Maven/Gradle lokal in <code>mavenLocal()</code>). Parallel erstellst du ein Docs-Repository (z.B. <code>my-library-docs</code>).</p>
-                    <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Im Bibliotheksprojekt ist dieses Docs-Repository unter <code>docs/releases</code> eingebunden (mit Schreibrechten). Im Consumer-Projekt, welches die Bibliothek konsumiert, wird dasselbe Docs-Repository als <strong>read-only Submodule</strong> unter <code>docs/lib-docs/my-library</code> eingebunden und auf den entsprechenden Release-Tag fixiert.</p>
+                    <h3 style="margin-bottom: 1rem; color: var(--primary);">Szczegóły zasady głównej</h3>
+                    <p style="margin-bottom: 1rem; color: var(--text-muted);">Kiedy tworzysz bibliotekę taką jak <code>my-library</code>, publikujesz ją w swoim menedżerze pakietów (np. lokalnie w <code>mavenLocal()</code> za pomocą Maven/Gradle). Równolegle tworzysz repozytorium dokumentacji (np. <code>my-library-docs</code>).</p>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-muted);">W projekcie biblioteki to repozytorium dokumentacji jest podłączane pod <code>docs/releases</code> (z uprawnieniami do zapisu). W projekcie konsumenta używającym tej biblioteki, to samo repozytorium jest podłączane jako <strong>podmoduł tylko do odczytu</strong> pod <code>docs/lib-docs/my-library</code> i przypinane do odpowiedniego znacznika wersji.</p>
                     <div style="background: rgba(29, 41, 66, 0.4); border: 1px solid var(--border); padding: 1.5rem; border-radius: 12px;">
-                        <h4 style="margin-bottom: 0.5rem; color: #fff; font-size: 0.95rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">Vorteil für Agenten:</h4>
-                        <p style="font-size: 0.9rem; color: var(--text-muted);">Ein AI-Agent, der den Auftrag hat, ein Consumer-Projekt anzupassen, sieht den standardisierten Ordner <code>docs/lib-docs/</code> und liest direkt die Markdown-Handbücher für die genutzte Version. Er baut dadurch korrekte Schnittstellen-Aufrufe ohne ausprobieren zu müssen.</p>
+                        <h4 style="margin-bottom: 0.5rem; color: #fff; font-size: 0.95rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">Korzyść dla agentów:</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Agent AI mający za zadanie zmodyfikować projekt konsumenta wykrywa standaryzowany folder <code>docs/lib-docs/</code> i bezpośrednio odczytuje instrukcje markdown dla używanej wersji, pisząc poprawne wywołania API bez zgadywania.</p>
                     </div>
                 </div>
             </div>
@@ -783,8 +783,8 @@
             <!-- Tab 2: Interactive Simulator -->
             <div id="interactive-tab" class="tab-content">
                 <div class="simulator-section">
-                    <h3 class="section-title">Ablauf-Simulator</h3>
-                    <p class="section-desc">Klicke durch die einzelnen Phasen, um den Fluss der Dokumentation visuell nachzuvollziehen.</p>
+                    <h3 class="section-title">Symulator przepływu</h3>
+                    <p class="section-desc">Klikaj na poszczególne etapy, aby wizualnie prześledzić przepływ dokumentacji.</p>
                     
                     <div class="simulator-layout">
                         <!-- Left Steps List -->
@@ -792,43 +792,43 @@
                             <button class="sim-step-btn active" onclick="activateStep(1)">
                                 <div class="sim-step-num">1</div>
                                 <div class="sim-step-info">
-                                    <h4>1. Docs-Repository erstellen</h4>
-                                    <p>Trennung von Doku und Quellcode.</p>
+                                    <h4>1. Utwórz repozytorium docs</h4>
+                                    <p>Oddzielenie dokumentacji od kodu źródłowego.</p>
                                 </div>
                             </button>
                             <button class="sim-step-btn" onclick="activateStep(2)">
                                 <div class="sim-step-num">2</div>
                                 <div class="sim-step-info">
-                                    <h4>2. Anbindung im Library-Projekt</h4>
-                                    <p>Als Submodule unter docs/releases (Schreibzugriff).</p>
+                                    <h4>2. Podłącz w projekcie biblioteki</h4>
+                                    <p>Dodaj jako podmoduł pod docs/releases (z dostępem do zapisu).</p>
                                 </div>
                             </button>
                             <button class="sim-step-btn" onclick="activateStep(3)">
                                 <div class="sim-step-num">3</div>
                                 <div class="sim-step-info">
-                                    <h4>3. Library & Doku taggen</h4>
-                                    <p>Synchrones Versionieren von Code & Handbuch.</p>
+                                    <h4>3. Synchroniczne tagowanie</h4>
+                                    <p>Wersjonowanie kodu i dokumentacji w tym samym czasie.</p>
                                 </div>
                             </button>
                             <button class="sim-step-btn" onclick="activateStep(4)">
                                 <div class="sim-step-num">4</div>
                                 <div class="sim-step-info">
-                                    <h4>4. Einbindung im Consumer-Projekt</h4>
-                                    <p>Als Read-Only Submodule unter docs/lib-docs/.</p>
+                                    <h4>4. Integracja w projekcie konsumenta</h4>
+                                    <p>Dodaj jako podmoduł tylko do odczytu pod docs/lib-docs/.</p>
                                 </div>
                             </button>
                             <button class="sim-step-btn" onclick="activateStep(5)">
                                 <div class="sim-step-num">5</div>
                                 <div class="sim-step-info">
-                                    <h4>5. Versions-Tag fixieren</h4>
-                                    <p>Auschecken der korrekten Dokumentations-Version.</p>
+                                    <h4>5. Przypinanie znacznika wersji</h4>
+                                    <p>Pobieranie dokładnej wersji dokumentacji.</p>
                                 </div>
                             </button>
                             <button class="sim-step-btn" onclick="activateStep(6)">
                                 <div class="sim-step-num">6</div>
                                 <div class="sim-step-info">
-                                    <h4>6. Agenten-Einsatz</h4>
-                                    <p>Der AI-Agent liest die Doku direkt lokal ein.</p>
+                                    <h4>6. Uruchomienie agenta</h4>
+                                    <p>Agent AI odczytuje dokumentację lokalnie.</p>
                                 </div>
                             </button>
                         </div>
@@ -837,24 +837,24 @@
                         <div class="sim-display">
                             <div class="diagram-container" id="diagram-view">
                                 <div class="diagram-node" id="node-lib">
-                                    <span class="node-label">Library Repository</span>
+                                    <span class="node-label">Repozytorium biblioteki</span>
                                     my-library
                                 </div>
                                 <div class="diagram-arrow" id="arrow-1"></div>
                                 <div class="diagram-node" id="node-docs">
-                                    <span class="node-label">Dokumentations-Repository</span>
+                                    <span class="node-label">Repozytorium dokumentacji</span>
                                     my-library-docs
                                 </div>
                                 <div class="diagram-arrow" id="arrow-2"></div>
                                 <div class="diagram-node" id="node-consumer">
-                                    <span class="node-label">Consumer Repository</span>
+                                    <span class="node-label">Repozytorium konsumenta</span>
                                     Consumer-App
                                 </div>
                             </div>
 
                             <div class="sim-explanation">
-                                <h5 id="explanation-title">1. Docs-Repository erstellen</h5>
-                                <p id="explanation-text">Zuerst wird ein dediziertes GitHub Repository (z. B. <code>my-library-docs</code>) erstellt. In diesem werden exklusiv Handbücher, Integrationsbeispiele und API-Konventionen gepflegt. Der Quellcode selbst weiß nichts davon, wodurch die Dokumentation sauber separiert bleibt.</p>
+                                <h5 id="explanation-title">1. Utwórz repozytorium docs</h5>
+                                <p id="explanation-text">Najpierw tworzone jest dedykowane repozytorium GitHub (np. <code>my-library-docs</code>) wyłącznie na podręczniki, przykłady integracji i specyfikacje API. Kod źródłowy pozostaje niezależny.</p>
                             </div>
                         </div>
                     </div>
@@ -864,26 +864,26 @@
             <!-- Tab 3: Command Generator -->
             <div id="generator-tab" class="tab-content">
                 <div class="builder-section">
-                    <h3 class="section-title">Git-Befehls-Generator</h3>
-                    <p class="section-desc">Gib deine Projektdaten ein und erhalte sofort die passenden Git-Befehle.</p>
+                    <h3 class="section-title">Generator komend Git</h3>
+                    <p class="section-desc">Wprowadź dane swojego projektu, aby natychmiast otrzymać odpowiednie komendy Git.</p>
                     
                     <div class="builder-grid">
                         <!-- Inputs -->
                         <div class="builder-inputs">
                             <div class="input-group">
-                                <label for="lib-name">Bibliothek-Name (Kebab-Case)</label>
+                                <label for="lib-name">Nazwa biblioteki (kebab-case)</label>
                                 <input type="text" id="lib-name" value="my-library" oninput="updateCommands()">
                             </div>
                             <div class="input-group">
-                                <label for="lib-repo-name">Doku-Repository Name</label>
+                                <label for="lib-repo-name">Nazwa repozytorium docs</label>
                                 <input type="text" id="lib-repo-name" value="my-library-docs" oninput="updateCommands()">
                             </div>
                             <div class="input-group">
-                                <label for="git-org">GitHub Organisation / Account</label>
+                                <label for="git-org">Organizacja / konto GitHub</label>
                                 <input type="text" id="git-org" value="my-organization" oninput="updateCommands()">
                             </div>
                             <div class="input-group">
-                                <label for="version-tag">Version / Tag</label>
+                                <label for="version-tag">Wersja / Tag</label>
                                 <input type="text" id="version-tag" value="v1.0.0" oninput="updateCommands()">
                             </div>
                         </div>
@@ -892,31 +892,31 @@
                         <div class="builder-output">
                             <div class="code-container">
                                 <div class="code-header">
-                                    <span class="code-title">Phase A: Setup im Library-Repository</span>
+                                    <span class="code-title">Fase A: Konfiguracja w repozytorium biblioteki</span>
                                     <button class="copy-btn" onclick="copyCode('code-setup-lib')">{{gen_copy}}</button>
                                 </div>
-                                <pre><code id="code-setup-lib"># 1. Neues Doku-Repository über GitHub CLI anlegen
+                                <pre><code id="code-setup-lib"># 1. Utwórz nowe repozytorium docs za pomocą GitHub CLI
 gh repo create my-organization/my-library-docs --public --clone
 
-# 2. In das Haupt-Library-Repository einbinden (Schreibrechte)
+# 2. Dodaj jako podmoduł w głównym repozytorium biblioteki (dostęp do zapisu)
 git submodule add git@github.com:my-organization/my-library-docs.git docs/releases</code></pre>
                             </div>
 
                             <div class="code-container">
                                 <div class="code-header">
-                                    <span class="code-title">Phase B: Einbindung im Consumer-Repository</span>
+                                    <span class="code-title">Fase B: Integracja w repozytorium konsumenta</span>
                                     <button class="copy-btn" onclick="copyCode('code-setup-consumer')">{{gen_copy}}</button>
                                 </div>
-                                <pre><code id="code-setup-consumer"># 1. Doku-Submodul lesend hinzufügen
+                                <pre><code id="code-setup-consumer"># 1. Dodaj podmoduł dokumentacji z dostępem do odczytu
 git submodule add git@github.com:my-organization/my-library-docs.git docs/lib-docs/my-library
 
-# 2. Version taggen und festpinnen
+# 2. Pobierz i przypnij określony znacznik wersji
 cd docs/lib-docs/my-library
 git fetch --tags
 git checkout tags/v1.0.0
 cd ../../
 
-# 3. Änderungen in Git erfassen
+# 3. Zatwierdź (commit) przydzielony podmoduł
 git add docs/lib-docs/my-library
 git commit -m "chore: pin my-library docs to v1.0.0"</code></pre>
                             </div>
@@ -927,7 +927,7 @@ git commit -m "chore: pin my-library docs to v1.0.0"</code></pre>
         </div>
 
         <footer>
-            <p>Git Submodule Documentation Pattern | Für KI-Agenten: <a href="llms.txt">llms.txt</a></p>
+            <p>Git Submodule Documentation Pattern | Dla agentów AI: <a href="llms.txt">llms.txt</a></p>
         </footer>
     </div>
 
@@ -950,8 +950,8 @@ git commit -m "chore: pin my-library docs to v1.0.0"</code></pre>
         // Localized Simulator Steps
         const stepsData = {
             "1": {
-                        "title": "1. Docs-Repository erstellen",
-                        "text": "Zuerst wird ein dediziertes GitHub Repository (z. B. <code>my-library-docs</code>) erstellt. In diesem werden exklusiv Handbücher, Integrationsbeispiele und API-Konventionen gepflegt. Der Quellcode selbst weiß nichts davon, wodurch die Dokumentation sauber separiert bleibt.",
+                        "title": "1. Utwórz repozytorium docs",
+                        "text": "Najpierw tworzone jest dedykowane repozytorium GitHub (np. <code>my-library-docs</code>) wyłącznie na podręczniki, przykłady integracji i specyfikacje API. Kod źródłowy pozostaje niezależny.",
                         "nodeClasses": {
                                     "lib": null,
                                     "docs": "active-node",
@@ -964,8 +964,8 @@ git commit -m "chore: pin my-library docs to v1.0.0"</code></pre>
                         "arrowClasses": {}
             },
             "2": {
-                        "title": "2. Anbindung im Library-Projekt",
-                        "text": "Das Doku-Repository wird im Library-Projekt unter <code>docs/releases</code> als Git-Submodule eingebunden. Hier schreiben Entwickler und KI-Assistenten die Anleitungen und Release-Notes.",
+                        "title": "2. Podłącz w projekcie biblioteki",
+                        "text": "Repozytorium dokumentacji jest dodawane do projektu biblioteki pod <code>docs/releases</code> jako podmoduł Git. W tym miejscu programiści i agenci AI tworzą instrukcje i informacje o wersji.",
                         "nodeClasses": {
                                     "lib": "active-node-secondary",
                                     "docs": "active-node",
@@ -980,8 +980,8 @@ git commit -m "chore: pin my-library docs to v1.0.0"</code></pre>
                         }
             },
             "3": {
-                        "title": "3. Library & Doku taggen",
-                        "text": "Bei einer neuen Library-Version (z. B. 1.0.0) wird der neue API-Stand dokumentiert. Dann wird im Submodul <code>docs/releases</code> the Tag <code>v1.0.0</code> erzeugt und gepusht, analog zur Library-Version.",
+                        "title": "3. Synchroniczne tagowanie",
+                        "text": "Wraz z nową wersją biblioteki (np. 1.0.0) dokumentowany jest nowy stan API. Następnie w podmodule <code>docs/releases</code> tworzony i wypychany jest tag <code>v1.0.0</code>, odpowiadający wersji biblioteki.",
                         "nodeClasses": {
                                     "lib": "active-node-secondary",
                                     "docs": "active-node",
@@ -996,8 +996,8 @@ git commit -m "chore: pin my-library docs to v1.0.0"</code></pre>
                         }
             },
             "4": {
-                        "title": "4. Einbindung im Consumer-Projekt",
-                        "text": "Im Consumer-Projekt (z. B. <code>ConsumerApp</code>) wird das Doku-Repository als Read-Only Submodule unter <code>docs/lib-docs/my-library</code> eingebunden.",
+                        "title": "4. Integracja w projekcie konsumenta",
+                        "text": "W projekcie konsumenta (np. <code>ConsumerApp</code>) repozytorium dokumentacji jest dodawane jako podmoduł tylko do odczytu pod <code>docs/lib-docs/my-library</code>.",
                         "nodeClasses": {
                                     "lib": null,
                                     "docs": "active-node",
@@ -1012,8 +1012,8 @@ git commit -m "chore: pin my-library docs to v1.0.0"</code></pre>
                         }
             },
             "5": {
-                        "title": "5. Versions-Tag fixieren",
-                        "text": "Um Code und Doku synchron zu halten, wechselt man im Consumer-Projekt in den Submodul-Ordner und checkt exakt das Tag aus (<code>git checkout tags/v1.0.0</code>). Die Doku passt nun genau zum Library-Stand.",
+                        "title": "5. Przypinanie znacznika wersji",
+                        "text": "Aby zachować synchronizację kodu i dokumentacji, przechodzi się do katalogu podmodułu w projekcie konsumenta i pobiera dokładny tag (<code>git checkout tags/v1.0.0</code>). Dokumentacja teraz dokładnie pasuje do biblioteki.",
                         "nodeClasses": {
                                     "lib": null,
                                     "docs": "active-node-success",
@@ -1028,8 +1028,8 @@ git commit -m "chore: pin my-library docs to v1.0.0"</code></pre>
                         }
             },
             "6": {
-                        "title": "6. Agenten-Einsatz",
-                        "text": "Wenn ein AI-Agent im Consumer-Workspace arbeitet, scannt er <code>docs/lib-docs/</code>. Er liest die exakt versionierte API-Dokumentation und kann korrekten Integrationscode schreiben.",
+                        "title": "6. Uruchomienie agenta",
+                        "text": "Gdy agent AI pracuje w przestrzeni roboczej konsumenta, skanuje <code>docs/lib-docs/</code>, odczytuje wersjonowaną dokumentację API i pisze poprawny kod integracyjny.",
                         "nodeClasses": {
                                     "lib": null,
                                     "docs": "active-node-success",
@@ -1090,11 +1090,11 @@ git commit -m "chore: pin my-library docs to v1.0.0"</code></pre>
             const gitOrg = document.getElementById('git-org').value.trim() || 'my-organization';
             const versionTag = document.getElementById('version-tag').value.trim() || 'v1.0.0';
 
-            const c_a_1 = "# 1. Neues Doku-Repository über GitHub CLI anlegen";
-            const c_a_2 = "# 2. In das Haupt-Library-Repository einbinden (Schreibrechte)";
-            const c_b_1 = "# 1. Doku-Submodul lesend hinzufügen";
-            const c_b_2 = "# 2. Version taggen und festpinnen";
-            const c_b_3 = "# 3. Änderungen in Git erfassen";
+            const c_a_1 = "# 1. Utwórz nowe repozytorium docs za pomocą GitHub CLI";
+            const c_a_2 = "# 2. Dodaj jako podmoduł w głównym repozytorium biblioteki (dostęp do zapisu)";
+            const c_b_1 = "# 1. Dodaj podmoduł dokumentacji z dostępem do odczytu";
+            const c_b_2 = "# 2. Pobierz i przypnij określony znacznik wersji";
+            const c_b_3 = "# 3. Zatwierdź (commit) przydzielony podmoduł";
 
             const setupLibCode = `${c_a_1}\ngh repo create ${gitOrg}/${libRepoName} --public --clone\n\n${c_a_2}\ngit submodule add git@github.com:${gitOrg}/${libRepoName}.git docs/releases`;
 
