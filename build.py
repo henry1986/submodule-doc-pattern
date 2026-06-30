@@ -76,6 +76,11 @@ def build():
         # Process page content
         output = template
         output = output.replace("{{lang}}", lang)
+        
+        # Map giscus lang codes properly
+        giscus_lang = "zh-CN" if lang == "zh" else lang
+        output = output.replace("{{giscus_lang}}", giscus_lang)
+        
         output = output.replace("{{hreflangs}}", hreflangs_str)
         output = output.replace("{{stepsDataJS}}", steps_data_js)
 
